@@ -1,3 +1,11 @@
+# Summary
+
+The project for learning security, OpenID and payments with stripe.
+
+# Demo images
+![index](images/index.jpeg)
+![openid](images/openid.jpeg)
+
 # Install
 
 1. `sqlite3 database.db < schema.sql`
