@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Checkout{% endblock %}
+
+{% include 'animation.html' %}
+
+{% block page_body %}
+    {% if current_user.is_authenticated %}
+    <div class="row" style="margin-top: 30%;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <h4 style="color:#000000; margin-top:10px;">Get the source code of this site</h4>
+                        <h4 style="color:#000000;">for 149 EUR</h4>
+                    </center>
+                    <div id="logreg-forms">
+                        <center>
+                            <button id="checkout-button" class="btn btn-success" data-secret="{{ session_id }}">Checkout</button>
+                        </center>
+                        <script src="https://js.stripe.com/v3/"></script>
+                        <script>
+                            var stripe = Stripe('{{ checkout_public_key }}');
+
+                            var checkoutButton = document.getElementById('checkout-button');
+
+                            checkoutButton.addEventListener('click', function() {
+                              stripe.redirectToCheckout({
+                                sessionId: '{{checkout_session_id}}'
+                              }).then(function (result) {
+                                // If `redirectToCheckout` fails due to a browser or network
+                                // error, display the localized error message to your customer
+                                // using `result.error.message`.
+                              });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    {% endif %}
+{% endblock %}

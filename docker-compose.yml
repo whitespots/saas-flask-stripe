@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+  web:
+    # APP_FOLDER = folder containing the app, loaded from .env file
+    build: ./${APP_FOLDER}
+    environment:
+      - FLASK_ENV=${FLASK_ENV}
+      - SECRET_KEY=${SECRET_KEY}
+      - GOOGLE_LOGIN_REDIRECT_SCHEME=${GOOGLE_LOGIN_REDIRECT_SCHEME}
+      - GOOGLE_DISCOVERY_URL=${GOOGLE_DISCOVERY_URL}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - STRIPE_PUBLISHABLE_KEY=${STRIPE_PUBLISHABLE_KEY}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - STRIPE_PRICE_ID=${STRIPE_PRICE_ID}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+      - DOMAIN=${DOMAIN}
+      - APP_FOLDER=${APP_FOLDER}
+    ports:
+      - 443:443
+    volumes:
+      - ./ssl/:/opt/ssl/

@@ -1,0 +1,5 @@
+flask
+flask_allows
+Flask-Login
+stripe
+oauthlib

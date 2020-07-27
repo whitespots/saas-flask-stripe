@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Index{% endblock %}
+
+{% include 'animation.html' %}
+
+{% block page_body %}
+<div class="row" style="margin-top:10%">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h2>A few words about this website</h2>
+                <p>
+                    <b>Welcome</b> to the Simple-SaaS shop.
+                    We tried to make it as simple as possible to show you the product <b>"as is".</b>
+                    You can login <a href="/login">here</a> and buy the source code of this application.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+<div class="row" style="margin-top:10%">
+    <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h2>Who needs it</h2>
+            <p>
+                <b>Each</b> developer, who is tired to make the same things each time.
+                It's a perfect template to clone on many others projects
+            </p>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Features</h2>
+                <ul>
+                    <li>Light</li>
+                    <li>Simple to edit</li>
+                    <li>Stripe integration</li>
+                    <li>OAuth2 Google login. No need to manage any passwords</li>
+                    <li>Docker-based</li>
+                    <li>Comes with nginx and Let's encrypt</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Price</h2>
+                <p>
+                    Only <b>149</b> EUR for the code (Just an hour of a senior developer)
+                    and <b>10</b> EUR per month for updates access
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
