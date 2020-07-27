@@ -8,10 +8,11 @@
 6. Copy the Price ID to `settings.config['STRIPE_PRICE_ID']`
 7. Add webhooks https://dashboard.stripe.com/test/webhooks with checkout events
 8. You can use the stripe cli to get the webhook signing secret
-9. **Change the ssl certificates** from testing to yours
 
 Example
 
 ```buildoutcfg
 https://localhost:5000/stripe_webhook
 ```
+
+9. **Change the ssl certificates** from testing to yours
