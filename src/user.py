@@ -45,12 +45,18 @@ class User(UserMixin):
         db.commit()
 
     @staticmethod
-    def set_paid(id_):
+    def set_paid(type, id_):
         db = get_db()
-        db.execute(
-            "UPDATE user SET paid=? WHERE id=?",
-            (True, id_),
-        )
+        if type == 'user':
+            db.execute(
+                "UPDATE user SET paid=? WHERE id=?",
+                (True, id_),
+            )
+         if type == 'session':
+            db.execute(
+                "UPDATE user SET paid=? WHERE payment_id=?",
+                (True, id_),
+            )
         db.commit()
 
 
