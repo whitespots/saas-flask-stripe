@@ -189,7 +189,7 @@ def thanks():
     if request.args.get('session_id'):
         # You have to keep it secure till this step. (checkout session id)
         # Otherwise, people will buy something for free.
-        User.set_paid(request.args.get('session_id'))
+        User.set_paid(type='user', current_user.id)
     return redirect(url_for('paid'))
 
 
@@ -217,7 +217,7 @@ def stripe_webhook():
         session = event['data']['object']
         print('checkout completed')
         # Fulfill the purchase...
-        User.set_paid(session['id'])
+        User.set_paid(type='session', session['id'])
 
     return redirect(url_for('paid'))
 
