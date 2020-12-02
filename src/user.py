@@ -48,7 +48,7 @@ class User(UserMixin):
     def set_paid(id_):
         db = get_db()
         db.execute(
-            "UPDATE user SET paid=? WHERE payment_id=?",
+            "UPDATE user SET paid=? WHERE id=?",
             (True, id_),
         )
         db.commit()
